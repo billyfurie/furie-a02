@@ -1,0 +1,7 @@
+
+R
+java:S1854!"<Remove this useless assignment to local variable "username".(Å”Íš
+C
+java:S1481!"-Remove this unused "username" local variable.(Å”Íš
+N	java:S106%"9Replace this use of System.out or System.err by a logger.(”Œ¦Ë
+Z	java:S106)"9Replace this use of System.out or System.err by a logger.(Æİêùÿÿÿÿ8Ä÷ıá¾/
