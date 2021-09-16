@@ -1,0 +1,6 @@
+
+N	java:S106*"9Replace this use of System.out or System.err by a logger.(…΄ν
+S	java:S106;"9Replace this use of System.out or System.err by a logger.(Ζέκωÿÿÿÿ
+S	java:S106C"9Replace this use of System.out or System.err by a logger.(Ζέκωÿÿÿÿ
+^
+java:S2184/"HCast one of the operands of this multiplication operation to a "double".(¤Ψ΅α
