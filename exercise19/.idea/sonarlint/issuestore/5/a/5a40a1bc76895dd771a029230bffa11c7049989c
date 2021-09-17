@@ -1,0 +1,10 @@
+
+b	java:S116"NRename this field "BMI" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ß¬™w
+P
+java:S1128".Remove this unused import 'java.util.Scanner'.(ÒÜÅ¸úÿÿÿÿ8âšá¦¿/
+F
+java:S1068"0Remove this unused "BMI_CONSTANT" private field.(çæøü
+@
+java:S1068"*Remove this unused "height" private field.(š»ä¶
+@
+java:S1068"*Remove this unused "weight" private field.(Š”øø
