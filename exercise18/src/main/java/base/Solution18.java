@@ -28,6 +28,8 @@ public class Solution18 {
                 return (number * 9 / 5) + 32
      */
 
+    private static final Scanner input = new Scanner(System.in);
+
     private static final String FAHRENHEIT = "Fahrenheit";
     private static final String CELSIUS = "Celsius";
     private static final char FAHRENHEIT_SYMBOL = 'F';
@@ -36,15 +38,13 @@ public class Solution18 {
     public static void main(String[] args) {
         Solution18 solution = new Solution18();
 
-        Scanner input = new Scanner(System.in);
-
-        char origUnit = solution.getTempUnitSymbol(input);
-        double origTemp = solution.getOriginalTemp(input, origUnit);
+        char origUnit = solution.getTempUnitSymbol();
+        double origTemp = solution.getOriginalTemp(origUnit);
 
         solution.displayNewTemp(origTemp, origUnit);
     }
 
-    private char getTempUnitSymbol(Scanner input) {
+    private char getTempUnitSymbol() {
         System.out.printf("Press C to convert from Fahrenheit to Celsius.%nPress F to convert from Celsius to Fahrenheit.%nYour choice: ");
 
         String unit = input.nextLine();
@@ -54,7 +54,7 @@ public class Solution18 {
         return Character.toUpperCase(unitSymbol);
     }
 
-    private double getOriginalTemp(Scanner input, char unit) {
+    private double getOriginalTemp(char unit) {
         String comp = getComplementUnit(unit);
 
         System.out.printf("Please enter the temperature in %s: ", comp);
