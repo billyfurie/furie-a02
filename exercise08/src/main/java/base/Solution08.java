@@ -1,5 +1,5 @@
 /*
- *  UCF COP3330 Fall 2021 Assignment 1 Solution
+ *  UCF COP3330 Fall 2021 Assignment 2 Solution
  *  Copyright 2021 William Furie
  */
 
@@ -28,19 +28,22 @@ public class Solution08 {
         print "There are `slicesLeft` leftover pieces."
      */
 
-    public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+    private static final Scanner input = new Scanner(System.in);
 
-        int numPeople = getInputToInt(input, "How many people? ");
-        int numPizzas = getInputToInt(input, "How many pizzas do you have? ");
-        int slicesPerPizza = getInputToInt(input, "How many slices per pizza? ");
+    public static void main(String[] args) {
+
+        Solution08 solution = new Solution08();
+
+        int numPeople = solution.getInputToInt("How many people? ");
+        int numPizzas = solution.getInputToInt("How many pizzas do you have? ");
+        int slicesPerPizza = solution.getInputToInt("How many slices per pizza? ");
 
         PizzaParty party = new PizzaParty(numPizzas, slicesPerPizza, numPeople);
 
         party.displayOutput();
     }
 
-    private static int getInputToInt(Scanner input, String prompt) {
+    private int getInputToInt(String prompt) {
         System.out.print(prompt);
 
         String userInput = input.nextLine();

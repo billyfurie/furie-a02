@@ -29,31 +29,33 @@ public class Solution12 {
         print ("After `years` years at `rate`%, the investment will be worth $`worth`."
      */
 
+    private static final Scanner input = new Scanner(System.in);
+
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+        Solution12 solution = new Solution12();
 
-        double principal = getInputToDouble(input, "Enter the principal: ");
-        double ratePercent = getInputToDouble(input, "Enter the rate of interest: ");
+        double principal = solution.getInputToDouble("Enter the principal: ");
+        double ratePercent = solution.getInputToDouble("Enter the rate of interest: ");
         double rateDecimal = ratePercent / 100;
-        int years = getInputToInt(input, "Enter the number of years: ");
+        int years = solution.getInputToInt("Enter the number of years: ");
 
-        double worth = getWorth(principal, rateDecimal, years);
+        double worth = solution.getWorth(principal, rateDecimal, years);
 
         System.out.printf("After %d years at %.3f%%, the investment will be worth $%.2f.", years, ratePercent, worth);
     }
 
-    private static double getWorth(double principal, double rate, int years) {
+    private double getWorth(double principal, double rate, int years) {
         double worth = principal * (1 + rate * years);
         worth = roundUpPenny(worth);
 
         return worth;
     }
 
-    private static double roundUpPenny(double worth) {
+    private double roundUpPenny(double worth) {
         return 0.01 * Math.ceil(worth * 100);
     }
 
-    private static double getInputToDouble(Scanner input, String prompt) {
+    private double getInputToDouble(String prompt) {
         System.out.print(prompt);
 
         String userInput = input.nextLine();
@@ -61,7 +63,7 @@ public class Solution12 {
         return Double.parseDouble(userInput);
     }
 
-    private static int getInputToInt(Scanner input, String prompt) {
+    private int getInputToInt(String prompt) {
         System.out.print(prompt);
 
         String userInput = input.nextLine();

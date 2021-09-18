@@ -26,22 +26,24 @@ public class Solution16 {
     */
 
     private static final int LEGAL_AGE = 16;
+    private static final Scanner input = new Scanner(System.in);
 
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
 
-        int age = getUserAge(input);
+        Solution16 solution = new Solution16();
 
-        boolean legal = checkLegal(age);
+        int age = solution.getUserAge();
 
-        displayLegality(legal);
+        boolean legal = solution.checkLegal(age);
+
+        solution.displayLegality(legal);
     }
 
-    private static boolean checkLegal(int age) {
+    private boolean checkLegal(int age) {
         return age >= LEGAL_AGE;
     }
 
-    private static int getUserAge(Scanner input) {
+    private int getUserAge() {
         System.out.print("What is your age? ");
 
         String ageStr = input.nextLine();
@@ -49,7 +51,7 @@ public class Solution16 {
         return Integer.parseInt(ageStr);
     }
 
-    private static void displayLegality(boolean legal) {
+    private void displayLegality(boolean legal) {
         String message = legal ? "You are old enough to legally drive." : "You are not old enough to legally drive.";
 
         System.out.println(message);

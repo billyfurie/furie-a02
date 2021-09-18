@@ -1,5 +1,5 @@
 /*
- *  UCF COP3330 Fall 2021 Assignment 1 Solution
+ *  UCF COP3330 Fall 2021 Assignment 2 Solution
  *  Copyright 2021 William Furie
  */
 
@@ -25,19 +25,20 @@ public class Solution09 {
      */
 
     private static final double ONE_GALLON_AREA = 350;
+    private static final Scanner input = new Scanner(System.in);
 
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+        Solution09 solution = new Solution09();
 
-        double length = getInputToDouble(input,"What is the length? ");
-        double width = getInputToDouble(input,"What is the width? ");
-        double area = getArea(length, width);
-        int numGals = getNumberOfGallons(area);
+        double length = solution.getInputToDouble("What is the length? ");
+        double width = solution.getInputToDouble("What is the width? ");
+        double area = solution.getArea(length, width);
+        int numGals = solution.getNumberOfGallons(area);
 
-        displayGallons(numGals, area);
+        solution.displayGallons(numGals, area);
     }
 
-    private static double getInputToDouble(Scanner input, String prompt) {
+    private double getInputToDouble(String prompt) {
         System.out.print(prompt);
 
         String userInput = input.nextLine();
@@ -45,15 +46,15 @@ public class Solution09 {
         return Double.parseDouble(userInput);
     }
 
-    private static double getArea(double length, double width) {
+    private double getArea(double length, double width) {
         return length * width;
     }
 
-    private static int getNumberOfGallons(double area) {
+    private int getNumberOfGallons(double area) {
         return (int)Math.ceil(area / ONE_GALLON_AREA);
     }
 
-    private static void displayGallons(int gallons, double area) {
+    private void displayGallons(int gallons, double area) {
         System.out.printf("You will need to purchase %d gallons of paint to cover %.3f square feet.", gallons, area);
     }
 }

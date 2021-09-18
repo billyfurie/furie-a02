@@ -1,5 +1,5 @@
 /*
- *  UCF COP3330 Fall 2021 Assignment 1 Solution
+ *  UCF COP3330 Fall 2021 Assignment 2 Solution
  *  Copyright 2021 William Furie
  */
 
@@ -24,17 +24,19 @@ public class Solution07 {
 
      */
 
-    public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+    private static final Scanner input = new Scanner(System.in);
 
-        double length = getInputToDouble(input, "What is the length of the room in feet? ");
-        double width = getInputToDouble(input, "What is the width of the room in feet? ");
+    public static void main(String[] args) {
+        Solution07 solution = new Solution07();
+
+        double length = solution.getInputToDouble("What is the length of the room in feet? ");
+        double width = solution.getInputToDouble("What is the width of the room in feet? ");
 
         Area floorArea = new Area(length, width);
         floorArea.displayOutput();
     }
 
-    private static double getInputToDouble(Scanner input, String prompt) {
+    private double getInputToDouble(String prompt) {
         System.out.print(prompt);
 
         String userInput = input.nextLine();

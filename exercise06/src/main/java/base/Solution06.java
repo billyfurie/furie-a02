@@ -1,5 +1,5 @@
 /*
- *  UCF COP3330 Fall 2021 Assignment 1 Solution
+ *  UCF COP3330 Fall 2021 Assignment 2 Solution
  *  Copyright 2021 William Furie
  */
 
@@ -26,20 +26,22 @@ public class Solution06 {
         print "It's `currentYear`, so you can retire in `retirementYear`."
      */
 
-    public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+    private static final Scanner input = new Scanner(System.in);
 
-        int currentAge = getInputToInt(input, "What is your current age? ");
-        int retireAge = getInputToInt(input, "At what age would you like to retire? ");
+    public static void main(String[] args) {
+        Solution06 solution = new Solution06();
+
+        int currentAge = solution.getInputToInt("What is your current age? ");
+        int retireAge = solution.getInputToInt("At what age would you like to retire? ");
         int yearsToGo = retireAge - currentAge;
         int currentYear = Year.now().getValue();
         int retirementYear = currentYear + yearsToGo;
 
-        System.out.printf("You have %d years left until you can retire.\n", yearsToGo);
+        System.out.printf("You have %d years left until you can retire.%n", yearsToGo);
         System.out.printf("It's %d, so you can retire in %d.", currentYear, retirementYear);
     }
 
-    private static int getInputToInt(Scanner input, String prompt) {
+    private int getInputToInt(String prompt) {
         System.out.print(prompt);
 
         String userInput = input.nextLine();

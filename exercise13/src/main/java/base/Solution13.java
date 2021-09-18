@@ -28,21 +28,24 @@ public class Solution13 {
         print "$`principal` invested at `rate`% for `years` years compounded `compounds` times per year is $`worth`"
      */
 
+    private static final Scanner input = new Scanner(System.in);
+
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
 
-        double principal = getInputToDouble(input, "What is the principal amount? ");
-        double ratePercent = getInputToDouble(input, "What is the rate? ");
+        Solution13 solution = new Solution13();
+
+        double principal = solution.getInputToDouble("What is the principal amount? ");
+        double ratePercent = solution.getInputToDouble("What is the rate? ");
         double rateDecimal = ratePercent / 100;
-        int years = getInputToInt(input, "What is the number of years? ");
-        int compounds = getInputToInt(input, "What is the number of times the interest is compounded per year? ");
+        int years = solution.getInputToInt("What is the number of years? ");
+        int compounds = solution.getInputToInt("What is the number of times the interest is compounded per year? ");
 
-        double worth = getWorth(principal, rateDecimal, years, compounds);
+        double worth = solution.getWorth(principal, rateDecimal, years, compounds);
 
         System.out.printf("$%.2f invested at %.3f%% for %d years compounded %d times per year is $%.2f.", principal, ratePercent, years, compounds, worth);
     }
 
-    private static double getWorth(double principal, double rate, int years, int compounds) {
+    private double getWorth(double principal, double rate, int years, int compounds) {
         double base = 1 + rate / compounds;
         double power = compounds * years;
         double worth = principal * Math.pow(base, power);
@@ -51,11 +54,11 @@ public class Solution13 {
         return worth;
     }
 
-    private static double roundUpPenny(double worth) {
+    private double roundUpPenny(double worth) {
         return 0.01 * Math.ceil(worth * 100);
     }
 
-    private static double getInputToDouble(Scanner input, String prompt) {
+    private double getInputToDouble(String prompt) {
         System.out.print(prompt);
 
         String userInput = input.nextLine();
@@ -63,7 +66,7 @@ public class Solution13 {
         return Double.parseDouble(userInput);
     }
 
-    private static int getInputToInt(Scanner input, String prompt) {
+    private int getInputToInt(String prompt) {
         System.out.print(prompt);
 
         String userInput = input.nextLine();

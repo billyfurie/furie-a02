@@ -25,19 +25,22 @@ public class Solution15 {
         Create prompt method that returns users string
     */
 
+    private static final Scanner input = new Scanner(System.in);
+
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+
+        Solution15 solution = new Solution15();
 
         Password password = new Password("TotallySecret123");
 
-        String username = getStringFromInput(input, "What is the username? ");
-        String passwordString = getStringFromInput(input, "What is the password? ");
+        String username = solution.getStringFromInput("What is the username? ");
+        String passwordString = solution.getStringFromInput("What is the password? ");
 
         String authResult = password.getAuthentication(passwordString);
         System.out.print(authResult);
     }
 
-    private static String getStringFromInput(Scanner input, String prompt) {
+    private String getStringFromInput(String prompt) {
         System.out.print(prompt);
 
         return input.nextLine();

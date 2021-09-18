@@ -44,10 +44,10 @@ public class Solution17 {
                 return false
     */
 
+    private static final Scanner input = new Scanner(System.in);
+
     public static void main(String[] args) {
         Solution17 solution = new Solution17();
-
-        Scanner input = new Scanner(System.in);
 
         int gender = (int)solution.getNumberFromInput(input, "Enter a 1 if you are male or a 2 if you are female: ");
         double alcoholAmount = solution.getNumberFromInput(input, "How many ounces of alcohol did you have? ");

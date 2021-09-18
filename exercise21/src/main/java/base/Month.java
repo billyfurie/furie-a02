@@ -2,18 +2,18 @@ package base;
 
 public class Month {
 
-    private static String JANUARY = "January";
-    private static String FEBRUARY = "February";
-    private static String MARCH = "March";
-    private static String APRIL = "April";
-    private static String MAY = "May";
-    private static String JUNE = "June";
-    private static String JULY = "July";
-    private static String AUGUST = "August";
-    private static String SEPTEMBER = "September";
-    private static String OCTOBER = "October";
-    private static String NOVEMBER = "November";
-    private static String DECEMBER = "December";
+    private static final String JANUARY = "January";
+    private static final String FEBRUARY = "February";
+    private static final String MARCH = "March";
+    private static final String APRIL = "April";
+    private static final String MAY = "May";
+    private static final String JUNE = "June";
+    private static final String JULY = "July";
+    private static final String AUGUST = "August";
+    private static final String SEPTEMBER = "September";
+    private static final String OCTOBER = "October";
+    private static final String NOVEMBER = "November";
+    private static final String DECEMBER = "December";
 
     int number;
     String name;

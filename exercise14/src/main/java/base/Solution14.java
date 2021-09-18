@@ -33,17 +33,19 @@ public class Solution14 {
 
     private static final String WISCONSIN = "WI";
     private static final double WISCONSIN_TAX_RATE = 0.055;
+    private static final Scanner input = new Scanner(System.in);
 
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
 
-        double cost = getInputToDouble(input, "What is the order amount? ");
-        String state = getInput(input, "What is the state? ");
+        Solution14 solution = new Solution14();
 
-        displayReceipt(cost, state);
+        double cost = solution.getInputToDouble("What is the order amount? ");
+        String state = solution.getInput("What is the state? ");
+
+        solution.displayReceipt(cost, state);
     }
 
-    private static void displayReceipt(double cost, String state) {
+    private void displayReceipt(double cost, String state) {
         double total = cost;
         String receipt = "";
 
@@ -60,13 +62,13 @@ public class Solution14 {
         System.out.print(receipt);
     }
 
-    private static String getInput(Scanner input, String prompt) {
+    private String getInput(String prompt) {
         System.out.print(prompt);
 
         return input.nextLine();
     }
 
-    private static double getInputToDouble(Scanner input, String prompt) {
+    private double getInputToDouble(String prompt) {
         System.out.print(prompt);
 
         String userInput = input.nextLine();

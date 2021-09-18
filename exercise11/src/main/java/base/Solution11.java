@@ -25,24 +25,26 @@ public class Solution11 {
                `dollars` U.S. dollars."
      */
 
+    private static final Scanner input = new Scanner(System.in);
+
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+        Solution11 solution = new Solution11();
 
-        double euros = getInputToDouble(input, "How many euros are you exchanging? ");
-        double rate = getInputToDouble(input, "What is the exchange rate? ");
+        double euros = solution.getInputToDouble("How many euros are you exchanging? ");
+        double rate = solution.getInputToDouble("What is the exchange rate? ");
 
-        double dollars = getDollars(euros, rate);
+        double dollars = solution.getDollars(euros, rate);
 
         System.out.printf("%.4f euros at an exchange rate of %.4f is %n%.2f U.S. dollars.", euros, rate, dollars);
     }
 
-    private static double getDollars(double euros, double rate) {
+    private double getDollars(double euros, double rate) {
         double dollars = euros * rate;
 
         return 0.01 * Math.ceil(dollars * 100);
     }
 
-    private static double getInputToDouble(Scanner input, String prompt) {
+    private double getInputToDouble(String prompt) {
         System.out.print(prompt);
 
         String userInput = input.nextLine();
